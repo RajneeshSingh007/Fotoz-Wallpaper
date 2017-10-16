@@ -1,0 +1,119 @@
+<!--
+    * Created by IntelliJ IDEA.
+    * User: Rajneesh Singh
+    * Date: 07-Oct-17
+    * Time: 10:15 PM
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+  <link rel="stylesheet" href="css/material/css/materialize.min.css" media="screen,projection">
+  <link rel="stylesheet" href="css/main.css" media="screen,projection">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="css/material/js/materialize.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fotoz - Register</title>
+  <script>
+      //validation function
+     function validateForm() {
+         var username = document.register.user_name.value;
+         var email = document.register.user_email.value;
+         var password = document.register.user_pass.value;
+         var cpassword = document.register.user_cpass.value;
+         var emailPattern = /^(?:[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+\.)*[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+@(?:(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!\.)){0,61}[a-zA-Z0-9]?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!$)){0,61}[a-zA-Z0-9]?)|(?:\[(?:(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\.){3}(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\]))$/;
+
+         //username check
+         if (username == "") {
+             alert("Username empty");
+             document.register.user_name.focus();
+             return false;
+         }
+
+         //email check
+         if(!email.match(emailPattern)){
+             alert("Invalid email address");
+             document.register.user_email.focus();
+             return false;
+         }
+
+         //password empty
+         if (password == "") {
+            alert("Password empty");
+            document.register.user_pass.focus();
+            return false;
+         }
+
+         //confirm password
+         if (cpassword == "") {
+            alert("Confirm password empty");
+            document.register.user_cpass.focus();
+            return false;
+         }
+
+         //both password
+         if(password != cpassword){
+              alert("Password Match failed");
+              document.register.user_pass.value.reset();
+              document.register.user_cpass.value.reset();
+              document.register.user_pass.focus();
+              return false;
+         }else {
+             //finally send data to signup
+             document.register.action = "Signup.php";
+         }
+
+     }
+
+  </script>
+</head>
+<body>
+        <!-- navigation and header-->
+        <nav class="nav-extended nav-full-header z-depth-0 blue-grey darken-2">
+             <div class="nav-wrapper db">
+               <h1 title="fotoz" class="h1_title">FOTOZ</h1>
+                       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+                         <ul id=up_ul class=" bt hide-on-med-and-down">
+                               <li><a href="index.php">Home</a></li>
+                               <li><a href="login.html">Login</a></li>
+                               <li><a class="active" href="register.html">Register</a></li>
+                               <li><a href="about.html">About</a></li>
+                            </ul>
+             </div>
+       </nav>
+        <!-- Register Form -->
+         <div class="main_container center">
+              <form class="col s12"  method="post" name="register" id="form_id" onsubmit="return validateForm()">
+                          <div class="col container center">
+                             <div class="input-field col s3">
+                                  <input placeholder="enter username" id="username"  type="text" name="user_name" class="center"  maxlength="10" minlength="4">
+                                  <label for="username" >Username </label>
+                             </div>
+                          </div>
+                          <div class="col container center">
+                             <div class="input-field col s3">
+                                   <input placeholder="enter email" id="email" type="email" name="user_email" class="center">
+                                   <label for="email">Email</label>
+                             </div>
+                          </div>
+                          <div class="col container center">
+                              <div class="input-field col s3">
+                                     <input placeholder="enter password" id="user_pass" type="password" name="user_pass" class="center" maxlength="10" minlength="4">
+                                     <label for="user_pass" >Password </label>
+                              </div>
+                          </div>
+                          <div class="col container center">
+                               <div class="input-field col s3">
+                                     <input placeholder="enter confirm password" id="user_cpass" type="password" name="user_cpass" class="center" maxlength="10" minlength="4">
+                                     <label for="user_cpass" >Confirm Password </label>
+                               </div>
+                          </div>
+
+                          <button class="btn waves-effect waves-red " type="submit" name="action" id="button_submit">Submit</button>
+
+              </form>
+         </div>
+</body>
+</html>

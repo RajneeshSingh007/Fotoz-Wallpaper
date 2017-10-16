@@ -1,0 +1,192 @@
+/**
+Div upper container
+ */
+div.up_container {
+    width: 100%;
+    height: 20%;
+}
+
+/**
+Div container
+ */
+div.container {
+    width: 100%;
+    height: 10%;
+}
+
+/**
+Title
+ */
+h1.h1_title {
+    font-family: SimSun-ExtB, sans-serif;
+    font-size: xx-large;
+    color: white;
+    text-align: center;
+    padding: 12px;
+}
+
+/**
+Toolbar style
+ */
+
+#up_ul li a.active {
+    color: #e6ee9c;
+}
+
+div#wall_image_container {
+    float: left;
+    display: inline;
+    height: 40px;
+    white-space: nowrap;
+}
+
+a#forgot {
+    text-align: center;
+    text-decoration: none;
+    margin-top: 20px;
+    padding: 8px;
+    border: 1px solid whitesmoke;
+    display: block;
+}
+
+/**
+Div main container
+ */
+div.main_container {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center
+}
+
+input {
+    display: inline-block
+}
+
+form {
+    margin: 0 auto;
+    width: 250px;
+}
+
+hr.hr_container {
+    border: 1px solid rgba(221, 221, 221, 0.15);
+}
+
+h3.h3_reg {
+    font-family: Calibri Light, monospace;
+    font-size: x-large;
+    color: black;
+    text-align: center;
+    padding: 12px;
+}
+
+/**
+Div main container
+ */
+div.footer_container {
+    width: 100%;
+    height: 20%;
+}
+
+/**
+body
+*/
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/**
+user dashboard
+ */
+
+.sidenav {
+    height: 100%;
+    width: 150px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 8px;
+    background-color: black;
+}
+
+.sidenav a {
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 4px;
+    border-radius: 2px;
+}
+
+.sidenav a.active {
+    color: #f4511e;
+}
+
+.sidenav a:hover {
+    color: #f4511e;
+}
+
+.main {
+    margin-left: 150px; /* Same as the width of the sidenav */
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+h4 {
+    font-family: SimSun-ExtB, sans-serif;
+    font-size: medium;
+    color: whitesmoke;
+    text-align: center;
+    padding: 4px;
+}
+
+h4.dashboard {
+    font-family: SimSun-ExtB, sans-serif;
+    font-size: medium;
+    color: whitesmoke;
+    text-align: center;
+    padding: 4px;
+}
+
+h4.username {
+    font-family: 'Roboto', monospace;
+    font-size: large;
+    color: black;
+    text-align: center;
+    padding: 6px;
+}
+
+#wall {
+    display: inline;
+    margin-left: 8px;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+
+

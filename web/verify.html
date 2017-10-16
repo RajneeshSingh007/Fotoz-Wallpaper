@@ -1,0 +1,71 @@
+<!--
+    * Created by IntelliJ IDEA.
+    * User: Rajneesh Singh
+    * Date: 11-Oct-17
+    * Time: 10:15 PM
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+  <link rel="stylesheet" href="css/material/css/materialize.min.css" media="screen,projection">
+  <link rel="stylesheet" href="css/main.css" media="screen,projection">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="css/material/js/materialize.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fotoz - Verify</title>
+  <script>
+    //pass url of current page
+    window.onload = function(){
+        document.getElementById('url').value = window.location.toString();
+    };
+
+    //verify code empty
+    function validateform() {
+
+       var verifyCode = document.verify.verify_code.value;
+
+       if(verifyCode == ""){
+           alert("Verification code empty");
+           document.verify.verify_code.focus();
+           return false;
+       }
+
+    }
+
+  </script>
+</head>
+<body>
+        <!-- navigation and header-->
+         <nav class="nav-extended nav-full-header z-depth-0 blue-grey darken-2">
+               <div class="nav-wrapper db">
+                 <h1 title="fotoz" class="h1_title">FOTOZ</h1>
+                         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+                           <ul id=up_ul class=" bt hide-on-med-and-down">
+                                 <li><a href="index.php">Home</a></li>
+                                 <li><a href="login.html">Login</a></li>
+                                 <li><a class="active" href="register.html">Register</a></li>
+                                 <li><a href="about.html">About</a></li>
+                              </ul>
+               </div>
+         </nav>
+            <!-- Verify Form -->
+            <div class="main_container center">
+               <p> <h5 style="font-family: 'Times New Roman', sans-serif">Please, Enter the verification code for successful registration !!!</h5></p>
+               <br> </br>
+             <form class="col s12" method="post" name="verify" action="Verify.php" id="form1_id" onsubmit="return validateform()">
+                         <input type="hidden" name="url" id="url"/>
+                         <div class="col container center">
+                            <div class="input-field col s3">
+                                 <input placeholder="enter code" id="code"  type="text" name="verify_code" class="center" minlength="4">
+                                 <label for="code" >Verification Code </label>
+                            </div>
+                         </div>
+                         <button class="btn waves-effect waves-red center" type="submit" name="action" id="button_submit">Submit</button>
+
+             </form>
+           </div>
+</body>
+</html>

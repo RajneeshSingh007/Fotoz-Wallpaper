@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+  <link rel="stylesheet" href="css/material/css/materialize.min.css" media="screen,projection">
+  <link rel="stylesheet" href="css/main.css" media="screen,projection">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="css/material/js/materialize.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fotoz - Forgot</title>
+  <script>
+      //validate form
+      function validateForm() {
+           var username = document.register.user_name.value;
+           var opassword = document.register.user_opass.value;
+           var npassword = document.register.user_npass.value;
+
+           //username check
+           if (username == "") {
+               alert("Username empty");
+               document.register.user_name.focus();
+               return false;
+           }
+
+           //old password empty
+           if (opassword == "") {
+               alert("Old Password empty");
+               document.register.user_opass.focus();
+               return false;
+           }
+
+                      //new password empty
+                      if (npassword == "") {
+                          alert("New Password empty");
+                          document.register.user_npass.focus();
+                          return false;
+                      }
+      }
+  </script>
+</head>
+<body>
+        <!-- navigation and header-->
+         <nav class="nav-extended nav-full-header z-depth-0 blue-grey darken-2">
+               <div class="nav-wrapper db">
+                 <h1 title="fotoz" class="h1_title">FOTOZ</h1>
+                         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+                           <ul id=up_ul class=" bt hide-on-med-and-down">
+                                 <li><a href="index.php">Home</a></li>
+                                 <li><a class="active" href="login.html">Login</a></li>
+                                 <li><a href="register.html">Register</a></li>
+                                 <li><a href="about.html">About</a></li>
+                              </ul>
+               </div>
+         </nav>
+          <!-- Login Form -->
+         <div class="main_container center">
+            <form class="col s12" method="post" name="register" action="Forgot.php" id="form_id" onsubmit="return validateForm()">
+                          <div class="col container center">
+                            <div class="input-field col s3">
+                                 <input placeholder="enter username" id="username"  type="text" name="user_name" class="validate center" maxlength="10" minlength="4">
+                                 <label for="username" >Username </label>
+                            </div>
+                         </div>
+                          <div class="col container center">
+                             <div class="input-field col s3">
+                                    <input placeholder="enter old password" id="user_pass" type="password" name="user_opass" class="validate center" maxlength="10" minlength="4">
+                                    <label for="user_pass" >Old Password </label>
+                             </div>
+                         </div>
+                         <div class="col container center">
+                              <div class="input-field col s3">
+                                    <input placeholder="enter new password" id="user_cpass" type="password" name="user_npass" class="validate center" maxlength="10" minlength="4">
+                                    <label for="user_cpass" >New Password </label>
+                               </div>
+                         </div>
+                         <button class="btn waves-effect waves-red center" type="submit" name="submitform">Reset Password </button>
+
+            </form>
+         </div>
+</body>
+</html>

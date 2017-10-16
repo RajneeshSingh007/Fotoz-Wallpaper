@@ -1,0 +1,16 @@
+//Register Table Data
+
+CREATE TABLE user(
+    id int(10) PRIMARY KEY AUTO_INCREMENT,
+    user_uniqueId varchar(100) UNIQUE,
+    userName varchar(250) UNIQUE,
+    userEmail varchar(100) UNIQUE,
+    encyrptPassword varchar(100),
+    encyrptSalt varchar(10),
+    created_at DATETIME,
+    updated_at DATETIME NULL,
+    is_activated int(1),
+    email_verify varchar(256),
+    wallName varchar(256),
+    wallPath varchar(512)
+)
